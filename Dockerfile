@@ -2,7 +2,8 @@ FROM rocker/tidyverse
 
 RUN apt install -y \
         ssh \
-        libsodium-dev
+        libsodium-dev \
+        texlive
 
 RUN Rscript -e "install.packages('togglr')"
 RUN	Rscript -e "install.packages('shiny')"
