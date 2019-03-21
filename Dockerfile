@@ -16,3 +16,4 @@ RUN Rscript -e "devtools::install_github('mlgrm/svyr')"
 # "TRUE" for httr out of band.  this means that when you run oauth, e.g. with
 # googlesheets, you'll need to copy and paste the auth token into rstudio
 RUN echo "options(httr_oob_default=TRUE)" >> /etc/R/Rprofile.site
+RUN export ADD=shiny && bash /etc/cont-init.d/add
