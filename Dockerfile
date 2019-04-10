@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         default-jdk \
         liblzma-dev \
         libbz2-dev \
-        postgres-client
+        postgresql-client
 
 RUN Rscript -e "install.packages(c('rJava','Hmisc','xlsx','googlesheets','googledrive','RPostgres'))"
 RUN Rscript -e "install.packages('togglr')"
