@@ -1,12 +1,13 @@
 FROM rocker/tidyverse
 
-RUN apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         ssh-client \
         libsodium-dev \
         texlive \
         default-jdk \
         liblzma-dev \
-        libbz2-dev
+        libbz2-dev \
+        postgres-client
 
 RUN Rscript -e "install.packages(c('rJava','Hmisc','xlsx','googlesheets','googledrive','RPostgres'))"
 RUN Rscript -e "install.packages('togglr')"
