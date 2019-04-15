@@ -7,7 +7,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         default-jdk \
         liblzma-dev \
         libbz2-dev \
-        postgresql-client
+        postgresql-client \
+        borgbackup
 
 RUN Rscript -e "install.packages(c('rJava','Hmisc','xlsx','googlesheets','googledrive','RPostgres'))"
 RUN Rscript -e "install.packages('togglr')"
