@@ -8,13 +8,17 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         liblzma-dev \
         libbz2-dev \
         postgresql-client \
-        borgbackup
+        borgbackup \
+        unixodbc unixodbc-dev \
+        odbc-postgresql
+        
 
 RUN Rscript -e "install.packages(c('rJava','Hmisc','xlsx','googlesheets','googledrive','RPostgres'))"
 RUN Rscript -e "install.packages('togglr')"
 RUN Rscript -e "install.packages('shiny')"
 RUN Rscript -e "install.packages('openxlsx')"
 RUN Rscript -e "devtools::install_github('mlgrm/svyr')"
+RUN Rscript -e "devtools::install_github('r-dbi/odbc')"
 
 
 # httr oauth doesn't work "in band" on rstudio server, so set the default to
