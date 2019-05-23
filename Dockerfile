@@ -10,7 +10,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
         postgresql-client \
         borgbackup \
         unixodbc unixodbc-dev \
-        odbc-postgresql
+        odbc-postgresql \
+        glabels
         
 
 RUN Rscript -e "install.packages(c('rJava','Hmisc','xlsx','googlesheets','googledrive','RPostgres'))"
