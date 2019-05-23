@@ -19,6 +19,8 @@ RUN Rscript -e "install.packages('togglr')"
 RUN Rscript -e "install.packages('shiny')"
 RUN Rscript -e "install.packages('openxlsx')"
 RUN Rscript -e "devtools::install_github('mlgrm/svyr')"
+RUN Rscript -e "devtools::install_github('mlgrm/projectr')"
+RUN Rscript -e "devtools::install_github('mlgrm/retryr')"
 RUN Rscript -e "devtools::install_github('r-dbi/odbc')"
 
 
